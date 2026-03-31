@@ -1,17 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Design Homework</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 기본 레이아웃 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f0f2f5; /* 부드러운 연회색 배경 */
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #2d3436;
+        }
+
+        /* 메인 제목 스타일 */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        /* 제목 아래 짧은 선 포인트 */
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #0984e3; /* 포인트 컬러 (블루) */
+        }
+
+        /* 메뉴 리스트 컨테이너 */
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        /* 메뉴 아이템(버튼) 스타일 */
+        .menu-item {
+            display: block;
+            text-decoration: none;
+            color: #2d3436;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        /* 마우스 올렸을 때 효과 */
+        .menu-item:hover {
+            transform: translateY(-5px); /* 살짝 위로 들림 */
+            background-color: #0984e3; /* 배경색이 블루로 변경 */
+            color: #ffffff; /* 글자색 흰색으로 변경 */
+            box-shadow: 0 10px 25px rgba(9, 132, 227, 0.2);
+            border-color: #0984e3;
+        }
+
+        /* 화면이 작은 모바일 기기 대응 */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .menu-item { padding: 15px; font-size: 1rem; }
+        }
+    </style>
 </head>
 <body>
+
     <h1>Homework</h1>
     
     <div class="menu">
-        <a href="character.html" class="menu-item">캐릭터 사이트</a>
-        <a href="book.html" class="menu-item">책 소개 사이트</a>
-        <a href="ui.html" class="menu-item">웹 UI 제작</a>
-        <a href="portfolio.html" class="menu-item">최종 포트폴리오</a>
+        <a href="character.html" class="menu-item">📚 책 소개</a>
+        <a href="book.html" class="menu-item">🎨 캐릭터</a>
+        <a href="ui.html" class="menu-item">🖥️ 웹사이트 UI</a>
+        <a href="portfolio.html" class="menu-item">📂 포트폴리오</a>
     </div>
+
 </body>
 </html>
