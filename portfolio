@@ -1,1 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - My Work</title>
+    
+    <!-- 구글 폰트 (Roboto와 Libre Baskerville는 보조용으로 유지) -->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&family=Roboto&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS 스타일 시작 --- */
+        
+        /* 1. 전체 설정: 폰트 Arial 적용 */
+        body {
+            font-family: Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+            color: #333;
+            line-height: 1.6;
+        }
 
+        /* 2. 네비게이션: 배경색 없음, 글자색 검정 */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: transparent; /* 배경색 제거 */
+        }
+
+        nav ul {
+            margin: 0 auto;
+            text-align: center;
+            padding: 25px 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000; /* 네비게이션 글자색 */
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        /* 3. 헤더 섹션: 배경색 #FFF6D6 */
+        header {
+            background-color: #FFF6D6; 
+            padding: 150px 0 100px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .header-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .header-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: right;
+        }
+
+        h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .profile-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        .profile-list li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* 4. 인스타그램 버튼: 배경 #F8E2B6, 글자색 #B08256 */
+        .button {
+            background-color: #F8E2B6;
+            color: #B08256;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            opacity: 0.8;
+        }
+
+        /* 5. 이미지 및 캡션 설정: 캡션 8pt, 색상 #545454 */
+        .intro-img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 15px 15px 30px rgba(0,0,0,0.1);
+        }
+
+        figcaption {
+            font-size: 8pt; /* 요청하신 8pt */
+            color: #545454; /* 요청하신 색상 */
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        /* 6. Experience 섹션 */
+        .experience {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #fff;
+        }
+
+        .experience h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            line-height: 2.5;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* 7. 프로젝트 섹션 */
+        .project {
+            padding: 100px 0;
+        }
+
+        .project.green {
+            background-color: #f7fdf4; /* 연한 그린 계열 유지 */
+        }
+
+        .project-grid {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .project-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .project-img-box {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .project-img-box img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* 8. 푸터 */
+        footer {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        footer h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* 반응형 설정 */
+        @media (max-width: 768px) {
+            .container { flex-direction: column; text-align: center; }
+            .header-image { text-align: center; margin-top: 50px; }
+            .project-grid { flex-direction: column; }
+        }
+
+        /* --- CSS 스타일 끝 --- */
+    </style>
+</head>
+<body>
+
+    <!-- 네비게이션 -->
+    <nav>
+        <ul>
+            <li><a href="#contact">contact</a></li>
+            <li><a href="#project">project</a></li>
+            <li><a href="#">experience</a></li>
+            <li><a href="#">profile</a></li>
+            <li><a href="https://hycu.ac.kr" target="_blank">sns</a></li>
+        </ul>
+    </nav>
+
+    <!-- 헤더 영역 -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Hi, there!<br>It's nice to meet you.</h1>
+                <ul class="profile-list">
+                    <li>_Graphic Designer</li>
+                    <li>_Graduated from HYCU</li>
+                    <li>_10+ years experience</li>
+                    <li>_Currently working as a freelancer designer</li>
+                    <li>_Born in Seoul</li>
+                </ul>
+                <a href="#" class="button">to my instagram</a>
+            </div>
+            <div class="header-image">
+                <figure>
+                    <!-- 이미지 경로는 실제 파일명에 맞춰 수정하세요 -->
+                    <img src="img/designer.jpg" alt="designer" class="intro-img">
+                    <figcaption>Photo by Nirmal Rajendharkumar on Unsplash</figcaption>
+                </figure>
+            </div>
+        </div>
+    </header>
+
+    <!-- 경력 섹션 -->
+    <section class="experience">
+        <div class="container" style="display: block;">
+            <h2>Experience</h2>
+            <ul class="skill-list">
+                <li>01_Adobe XD</li>
+                <li>02_Photoshop/Illustration</li>
+                <li>03_Premiere Pro</li>
+                <li>04_Languages</li>
+                <li>05_Design Research</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 프로젝트 1 (이미지 왼쪽) -->
+    <section class="project green" id="project">
+        <div class="container project-grid">
+            <div class="project-img-box">
+                <img src="img/magazine.jpg" alt="Editorial Design">
+                <figcaption style="text-align: left;">Magazine Design</figcaption>
+            </div>
+            <div class="project-text">
+                <h2>Editorial Design Strategy</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#" class="button">read more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 프로젝트 2 (이미지 오른쪽) -->
+    <section class="project">
+        <div class="container project-grid" style="flex-direction: row-reverse;">
+            <div class="project-img-box">
+                <img src="img/planning.jpg" alt="UX Design">
+                <figcaption>Design Research</figcaption>
+            </div>
+            <div class="project-text">
+                <h2>User Experience Design</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#" class="button">read more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer id="contact">
+        <h3>Any Questions? Please contact me.</h3>
+        <p>your-email@hycu.ac.kr<br>
+        designed and developed by Web Design Class</p>
+    </footer>
+
+</body>
+</html>
