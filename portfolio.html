@@ -12,40 +12,35 @@
             font-family: Arial, sans-serif; /* Arial 서체 */
             scroll-behavior: smooth;
             color: #000;
-            background-color: #ffffff; /* 기본 배경 흰색 */
+            background-color: #ffffff;
         }
 
-        /* [2. 배경색 클래스 - 명확히 고정] */
-        .bg-cream { 
-            background-color: #fff9d7 !important; /* 헤더와 동일한 크림색 */
-        }
-        .bg-white { 
-            background-color: #ffffff !important; /* 흰색 */
-        }
+        /* [2. 배경색 클래스] */
+        .bg-cream { background-color: #fff9d7 !important; }
+        .bg-white { background-color: #ffffff !important; }
 
         /* [3. 네비게이션 바] */
         nav {
             display: flex;
             justify-content: flex-end;
             padding: 25px 10%;
-            background-color: #fff9d7; /* 헤더 배경 */
+            background-color: #fff9d7;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
-
         nav a {
             margin-left: 30px;
             text-decoration: none;
             color: #000;
             font-weight: bold;
-            text-transform: uppercase; /* 소문자를 대문자로 변환 */
+            text-transform: uppercase;
             font-size: 14px;
         }
 
         /* [4. 섹션 레이아웃] */
         section {
-            padding: 100px 10%; /* 위아래 여백 확대 */
+            padding: 100px 10%;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -62,44 +57,41 @@
         h1 { font-size: 54px; margin-bottom: 20px; line-height: 1.1; letter-spacing: -1px; }
         h2 { font-size: 38px; margin-bottom: 20px; font-weight: bold; }
         p { line-height: 1.6; font-size: 16px; margin-bottom: 25px; color: #333; }
-        
-        .sub-text { 
-            margin-bottom: 45px; 
-            font-size: 18px; 
-            line-height: 1.8; 
-            font-weight: 500;
-        }
+        .sub-text { margin-bottom: 45px; font-size: 18px; line-height: 1.8; font-weight: 500; }
 
         /* [6. 이미지 및 캡션 수정 - 중요!] */
+        /* 이미지 컨테이너 (정렬용) */
+        .img-container {
+            flex: 0 0 auto; /* 플렉스 아이템 크기 고정 */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
         /* 이미지와 캡션을 묶는 박스 */
         .img-caption-box {
-            display: inline-block; /* 내용물 너비에 맞게 조절 */
-            text-align: right;    /* 캡션 오른쪽 정렬 */
-            line-height: 0;       /* 이미지와 캡션 사이 간격 최소화 */
+            display: flex;       /* 플렉스 박스로 변경 */
+            flex-direction: column; /* 세로로 정렬 */
+            align-items: flex-end; /* 내부 요소들을 오른쪽 끝으로 정렬 */
+            width: 100%;         /* 부모(.img-container) 너비를 따름 */
         }
 
         /* 박스 내부의 이미지 */
         .img-caption-box img {
             display: block;
-            max-width: 100%;
+            width: 100%;       /* 박스 너비에 꽉 차게 */
             height: auto;
-            margin-bottom: 12px; /* 캡션과의 간격 */
+            margin-bottom: 12px;
         }
 
         /* 박스 내부의 캡션 */
         .img-caption {
             font-size: 12px;
             color: #777;
-            text-align: right;
             display: block;
             margin: 0;
-            line-height: 1.2; /* 캡션 자체 줄간격 */
-        }
-
-        /* 섹션 내 이미지 컨테이너 (정렬용) */
-        .img-container {
-            flex: 1;
-            text-align: center; /* 박스를 가운데로 */
+            line-height: 1.2;
+            text-align: right; /* 텍스트 자체도 오른쪽 정렬 */
         }
 
         /* [7. 버튼 스타일] */
@@ -116,29 +108,20 @@
         }
         .btn:hover { background-color: #f7e07a; }
 
-        /* [8. Experience 섹션 특화] */
-        .experience-area {
-            background-color: #ffffff;
-            padding: 100px 0 120px 0;
-            text-align: center;
-        }
+        /* [8. Experience 섹션] */
+        .experience-area { background-color: #ffffff; padding: 100px 0 120px 0; text-align: center; }
         .experience-area h2 { font-size: 42px; margin-bottom: 40px; }
         .experience-list div { margin: 15px 0; font-size: 20px; font-weight: 500; }
 
         /* [9. 푸터] */
-        footer {
-            text-align: center;
-            padding: 90px 0;
-            background-color: #ffffff;
-            border-top: 1px solid #eee;
-        }
+        footer { text-align: center; padding: 90px 0; background-color: #ffffff; border-top: 1px solid #eee; }
 
         /* [10. 반응형 (모바일)] */
         @media (max-width: 1024px) {
             section { flex-direction: column; text-align: center; padding: 60px 5%; }
             .text-container { padding: 40px 0; order: 2; }
-            .img-container { order: 1; width: 100%; }
-            .img-caption-box { width: 100% !important; max-width: 500px; margin: 0 auto; }
+            .img-container { order: 1; width: 100%; flex: 1 1 auto; /* 모바일에선 반응형으로 */ }
+            .img-caption-box { max-width: 500px; margin: 0 auto; align-items: center; /* 모바일에선 가운데 정렬 */ }
             .img-caption-box img { width: 100% !important; margin: 0 auto; }
             .img-caption { text-align: center; margin-top: 8px; }
             nav { justify-content: center; padding: 20px 0; }
@@ -148,7 +131,7 @@
 </head>
 <body>
 
-    <!-- [상단 메뉴바] (크림색) -->
+    <!-- [상단 메뉴바] -->
     <nav>
         <a href="#">contact</a>
         <a href="#">project</a>
@@ -157,7 +140,7 @@
         <a href="#">sns</a>
     </nav>
 
-    <!-- [1. Intro 섹션] (크림색) -->
+    <!-- [1. Intro 섹션] -->
     <section class="bg-cream">
         <div class="text-container">
             <h1>Hi there!<br>It's nice to meet you.</h1>
@@ -170,16 +153,16 @@
             </div>
             <a href="#" class="btn">to my instagram</a>
         </div>
-        <div class="img-container">
-            <!-- 이미지와 캡션을 박스로 묶음 -->
-            <div class="img-caption-box" style="width: 450px;">
+        <!-- .img-container에 너비를 지정하여 이미지가 고정됨 -->
+        <div class="img-container" style="width: 450px;">
+            <div class="img-caption-box">
                 <img src="designer.jpg" alt="Designer">
                 <span class="img-caption">Photo by Mariah Krafft on Unsplash</span>
             </div>
         </div>
     </section>
 
-    <!-- [2. Experience 섹션] (흰색) -->
+    <!-- [2. Experience 섹션] -->
     <div class="experience-area">
         <h2>Experience</h2>
         <div class="experience-list">
@@ -191,11 +174,10 @@
         </div>
     </div>
 
-    <!-- [3. Editorial Strategy 섹션] (크림색) - 이미지 좌측 -->
+    <!-- [3. Editorial Strategy 섹션] -->
     <section class="bg-cream">
-        <div class="img-container">
-            <!-- 이미지와 캡션을 박스로 묶음 -->
-            <div class="img-caption-box" style="width: 480px;">
+        <div class="img-container" style="width: 480px;">
+            <div class="img-caption-box">
                 <img src="magazine.jpg" alt="Editorial Design">
                 <span class="img-caption">Editorial Design</span>
             </div>
@@ -207,27 +189,25 @@
         </div>
     </section>
 
-    <!-- [4. UX Design 섹션] (흰색) - 이미지 우측 -->
+    <!-- [4. UX Design 섹션] -->
     <section class="bg-white">
         <div class="text-container" style="text-align: right;">
             <h2>User Experience Design</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
             <a href="#" class="btn">read more</a>
         </div>
-        <div class="img-container">
-            <!-- 이미지와 캡션을 박스로 묶음 -->
-            <div class="img-caption-box" style="width: 480px;">
+        <div class="img-container" style="width: 480px;">
+            <div class="img-caption-box">
                 <img src="planning.jpg" alt="UX Design">
                 <span class="img-caption">UX Design</span>
             </div>
         </div>
     </section>
 
-    <!-- [5. GUI Design 섹션] (크림색) - 이미지 좌측 -->
+    <!-- [5. GUI Design 섹션] -->
     <section class="bg-cream">
-        <div class="img-container">
-            <!-- 이미지와 캡션을 박스로 묶음 -->
-            <div class="img-caption-box" style="width: 480px;">
+        <div class="img-container" style="width: 480px;">
+            <div class="img-caption-box">
                 <img src="web.jpg" alt="Application Design">
                 <span class="img-caption">Application Design</span>
             </div>
@@ -239,7 +219,7 @@
         </div>
     </section>
 
-    <!-- [푸터] (흰색) -->
+    <!-- [푸터] -->
     <footer>
         <h2 style="font-size: 28px;">Any Questions? Please contact me.</h2>
         <p style="font-size: 18px; margin-top: 10px;">*****@hycu.ac.kr</p>
