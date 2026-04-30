@@ -59,10 +59,10 @@
         p { line-height: 1.6; font-size: 16px; margin-bottom: 25px; color: #333; }
         .sub-text { margin-bottom: 45px; font-size: 18px; line-height: 1.8; font-weight: 500; }
 
-        /* [6. 이미지 및 캡션 수정 - 중요!] */
+        /* [6. 이미지 및 캡션] */
         /* 이미지 컨테이너 (정렬용) */
         .img-container {
-            flex: 0 0 auto; /* 플렉스 아이템 크기 고정 */
+            flex: 0 0 auto; 
             text-align: center;
             display: flex;
             justify-content: center;
@@ -70,16 +70,16 @@
 
         /* 이미지와 캡션을 묶는 박스 */
         .img-caption-box {
-            display: flex;       /* 플렉스 박스로 변경 */
-            flex-direction: column; /* 세로로 정렬 */
-            align-items: flex-end; /* 내부 요소들을 오른쪽 끝으로 정렬 */
-            width: 100%;         /* 부모(.img-container) 너비를 따름 */
+            display: flex; 
+            flex-direction: column;
+            align-items: flex-end; 
+            width: 100%; 
         }
 
         /* 박스 내부의 이미지 */
         .img-caption-box img {
             display: block;
-            width: 100%;       /* 박스 너비에 꽉 차게 */
+            width: 100%;      
             height: auto;
             margin-bottom: 12px;
         }
@@ -96,7 +96,7 @@
             display: block;
             margin: 0;
             line-height: 1.2;
-            text-align: right; /* 텍스트 자체도 오른쪽 정렬 */
+            text-align: right;
         }
 
         /* [7. 버튼 스타일] */
