@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - One Page Design</title>
     <style>
-        /*  공통 설정 및 폰트 */
+        /*  공통 설정 */
         body, html {
             margin: 0;
             padding: 0;
@@ -17,15 +17,15 @@
         }
 
         /*  배경색 클래스 */
-        .bg-cream { background-color: #fff9d7 ; }
-        .bg-white { background-color: #ffffff ; }
+        .bg-cream { background-color: #fff9d7; }
+        .bg-white { background-color: #ffffff; }
 
-        /*  네비게이션 바 */
+        /*  네비게이션 바 블러 효과 */
         nav {
             display: flex;
             justify-content: center;
             padding: 25px 10%;
-            background-color: rgba(255, 249, 215, 0.8) ;
+            background-color: rgba(255, 249, 215, 0.8);
             backdrop-filter: blur(10px); 
             -webkit-backdrop-filter: blur(10px);
             position: sticky;
@@ -44,11 +44,11 @@
         }
         nav a:hover { color: #888; }
 
-        /* 스크롤 애니메이션 CSS */
+        /*  스크롤 애니메이션 CSS */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.9s ease-out;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
         }
         .reveal.active {
             opacity: 1;
@@ -63,22 +63,15 @@
             justify-content: space-between;
             min-height: 450px;
         }
-
         .text-container { flex: 1; padding: 0 40px; }
-        
         h1 { font-size: 54px; margin-bottom: 20px; line-height: 1.1; letter-spacing: -1px; }
         h2 { font-size: 38px; margin-bottom: 20px; font-weight: bold; }
         p { line-height: 1.6; font-size: 16px; margin-bottom: 25px; color: #333; }
         .sub-text { margin-bottom: 45px; font-size: 18px; line-height: 1.8; font-weight: 500; }
 
-        /* 이미지 및 캡션 */
+        /*  이미지 및 캡션 */
         .img-container { flex: 0 0 auto; display: flex; justify-content: center; }
-        .img-caption-box { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: flex-end; 
-            width: 100%; 
-        }
+        .img-caption-box { display: flex; flex-direction: column; align-items: flex-end; width: 100%; }
         .img-caption-box img {
             display: block;
             width: 100%;
@@ -86,9 +79,7 @@
             margin-bottom: 12px;
             transition: transform 0.3s ease;
         }
-        /* 이미지 호버 효과 */
         .img-caption-box:hover img { transform: scale(1.02); }
-
         .shadow-effect { box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); }
         .img-caption { font-size: 12px; color: #777; text-align: right; }
 
@@ -118,7 +109,7 @@
         @media (max-width: 1024px) {
             section { flex-direction: column; text-align: center; padding: 80px 5%; }
             .text-container { padding: 40px 0; order: 2; }
-            .img-container { order: 1; width: 100% ; margin-bottom: 30px; }
+            .img-container { order: 1; width: 100% !important; margin-bottom: 30px; }
             .img-caption-box { align-items: center; }
             .img-caption { text-align: center; }
         }
@@ -126,13 +117,13 @@
 </head>
 <body>
 
-    <!-- 상단 메뉴바 -->
+    <!-- 상단 메뉴바  -->
     <nav>
         <a href="#home">contact</a>
-        <a href="#editorial">project</a>
+        <a href="#editorial">editorial</a>
         <a href="#experience">experience</a>
-        <a href="#ux">profile</a>
-        <a href="#">sns</a>
+        <a href="#ux">ux design</a>
+        <a href="#gui">gui design</a>
     </nav>
 
     <!--  Intro 섹션 -->
@@ -148,7 +139,6 @@
             </div>
             <a href="#" class="btn">to my instagram</a>
         </div>
-
         <div class="img-container" style="width: 350px;">
             <div class="img-caption-box">
                 <img src="designer.jpg" alt="Designer" class="shadow-effect">
@@ -179,7 +169,7 @@
         </div>
         <div class="text-container">
             <h2>Editorial Design Strategy</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <a href="#" class="btn">read more</a>
         </div>
     </section>
@@ -188,7 +178,7 @@
     <section id="ux" class="bg-white reveal">
         <div class="text-container" style="text-align: right;">
             <h2>User Experience Design</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
             <a href="#" class="btn">read more</a>
         </div>
         <div class="img-container" style="width: 480px;">
@@ -199,8 +189,8 @@
         </div>
     </section>
 
-    <!--  GUI Design 섹션  -->
-    <section class="bg-cream reveal">
+    <!--  GUI Design  -->
+    <section id="gui" class="bg-cream reveal">
         <div class="img-container" style="width: 480px;">
             <div class="img-caption-box">
                 <img src="web.jpg" alt="Application Design">
@@ -209,7 +199,7 @@
         </div>
         <div class="text-container">
             <h2>Graphic User Interface Design</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             <a href="#" class="btn">read more</a>
         </div>
     </section>
@@ -221,25 +211,23 @@
         <p style="font-size: 12px; color: #999; margin-top: 40px;">design and developed by Web Design Class</p>
     </footer>
 
-    <!-- 자바스크립트: 스크롤 애니메이션 제어 -->
+    <!-- 자바스크립트: 스크롤 애니메이션 최적화 -->
     <script>
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
-
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150; 
+                
+                var elementVisible = 50; 
 
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
             }
         }
-
         window.addEventListener("scroll", reveal);
         window.onload = reveal;
     </script>
-
 </body>
 </html>
