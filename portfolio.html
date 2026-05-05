@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - One Page Design</title>
     <style>
+        /*  공통 설정 및 폰트 */
         body, html {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif; /* Arial 서체 적용 */
+            font-family: Arial, sans-serif;
             scroll-behavior: smooth;
             color: #000;
             background-color: #ffffff;
             overflow-x: hidden;
         }
 
-        .bg-cream { background-color: #fff9d7 !important; }
-        .bg-white { background-color: #ffffff !important; }
+        /*  배경색 클래스 */
+        .bg-cream { background-color: #fff9d7 ; }
+        .bg-white { background-color: #ffffff ; }
 
-        /* 네비게이션 바 - 블러 효과 적용 */
+        /*  네비게이션 바 */
         nav {
             display: flex;
             justify-content: center;
             padding: 25px 10%;
-            /* 배경색에 투명도를 주고 블러 효과 추가 */
-            background-color: rgba(255, 249, 215, 0.8) !important;
+            background-color: rgba(255, 249, 215, 0.8) ;
             backdrop-filter: blur(10px); 
             -webkit-backdrop-filter: blur(10px);
             position: sticky;
@@ -43,7 +44,7 @@
         }
         nav a:hover { color: #888; }
 
-        /*  스크롤 애니메이션 클래스 */
+        /* 스크롤 애니메이션 CSS */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
@@ -60,7 +61,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            min-height: 500px;
+            min-height: 450px;
         }
 
         .text-container { flex: 1; padding: 0 40px; }
@@ -70,7 +71,7 @@
         p { line-height: 1.6; font-size: 16px; margin-bottom: 25px; color: #333; }
         .sub-text { margin-bottom: 45px; font-size: 18px; line-height: 1.8; font-weight: 500; }
 
-        /*  이미지 및 캡션 */
+        /* 이미지 및 캡션 */
         .img-container { flex: 0 0 auto; display: flex; justify-content: center; }
         .img-caption-box { 
             display: flex; 
@@ -83,13 +84,15 @@
             width: 100%;
             height: auto;
             margin-bottom: 12px;
-            transition: transform 0.3s ease; /* 호버 효과를 위한 트랜지션 */
+            transition: transform 0.3s ease;
         }
-        .img-caption-box:hover img { transform: scale(1.02); } /* 미세한 확대 효과 */
+        /* 이미지 호버 효과 */
+        .img-caption-box:hover img { transform: scale(1.02); }
 
         .shadow-effect { box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); }
         .img-caption { font-size: 12px; color: #777; text-align: right; }
 
+        /*  버튼 스타일 */
         .btn {
             display: inline-block;
             padding: 15px 35px;
@@ -103,17 +106,19 @@
         }
         .btn:hover { background-color: #f7e07a; transform: translateY(-3px); }
 
+        /*  Experience 섹션 */
         .experience-area { background-color: #ffffff; padding: 120px 0; text-align: center; }
         .experience-area h2 { font-size: 42px; margin-bottom: 40px; }
         .experience-list div { margin: 15px 0; font-size: 20px; font-weight: 500; }
 
+        /*  푸터 */
         footer { text-align: center; padding: 100px 0; background-color: #ffffff; border-top: 1px solid #eee; }
 
         /*  반응형 모바일 */
         @media (max-width: 1024px) {
             section { flex-direction: column; text-align: center; padding: 80px 5%; }
             .text-container { padding: 40px 0; order: 2; }
-            .img-container { order: 1; width: 100% !important; margin-bottom: 30px; }
+            .img-container { order: 1; width: 100% ; margin-bottom: 30px; }
             .img-caption-box { align-items: center; }
             .img-caption { text-align: center; }
         }
@@ -121,6 +126,7 @@
 </head>
 <body>
 
+    <!-- 상단 메뉴바 -->
     <nav>
         <a href="#home">contact</a>
         <a href="#editorial">project</a>
@@ -129,6 +135,7 @@
         <a href="#">sns</a>
     </nav>
 
+    <!--  Intro 섹션 -->
     <section id="home" class="bg-cream reveal">
         <div class="text-container">
             <h1>Hi there!<br>It's nice to meet you.</h1>
@@ -142,7 +149,7 @@
             <a href="#" class="btn">to my instagram</a>
         </div>
 
-        <div class="img-container" style="width: 380px;">
+        <div class="img-container" style="width: 350px;">
             <div class="img-caption-box">
                 <img src="designer.jpg" alt="Designer" class="shadow-effect">
                 <span class="img-caption">Photo by Mariah Krafft on Unsplash</span>
@@ -150,6 +157,7 @@
         </div>
     </section>
 
+    <!--  Experience 섹션 -->
     <div id="experience" class="experience-area reveal">
         <h2>Experience</h2>
         <div class="experience-list">
@@ -161,8 +169,9 @@
         </div>
     </div>
 
+    <!--  Editorial Strategy 섹션 -->
     <section id="editorial" class="bg-cream reveal">
-        <div class="img-container" style="width: 500px;">
+        <div class="img-container" style="width: 480px;">
             <div class="img-caption-box">
                 <img src="magazine.jpg" alt="Editorial Design">
                 <span class="img-caption">Editorial Design</span>
@@ -170,18 +179,19 @@
         </div>
         <div class="text-container">
             <h2>Editorial Design Strategy</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             <a href="#" class="btn">read more</a>
         </div>
     </section>
 
+    <!--  UX Design 섹션 -->
     <section id="ux" class="bg-white reveal">
         <div class="text-container" style="text-align: right;">
             <h2>User Experience Design</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
             <a href="#" class="btn">read more</a>
         </div>
-        <div class="img-container" style="width: 500px;">
+        <div class="img-container" style="width: 480px;">
             <div class="img-caption-box">
                 <img src="planning.jpg" alt="UX Design">
                 <span class="img-caption">UX Design</span>
@@ -189,6 +199,22 @@
         </div>
     </section>
 
+    <!--  GUI Design 섹션  -->
+    <section class="bg-cream reveal">
+        <div class="img-container" style="width: 480px;">
+            <div class="img-caption-box">
+                <img src="web.jpg" alt="Application Design">
+                <span class="img-caption">Application Design</span>
+            </div>
+        </div>
+        <div class="text-container">
+            <h2>Graphic User Interface Design</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <a href="#" class="btn">read more</a>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
     <footer>
         <h2 style="font-size: 28px;">Any Questions? Please contact me.</h2>
         <p style="font-size: 18px; margin-top: 10px;">*****@hycu.ac.kr</p>
@@ -203,7 +229,7 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150; // 
+                var elementVisible = 150; 
 
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
